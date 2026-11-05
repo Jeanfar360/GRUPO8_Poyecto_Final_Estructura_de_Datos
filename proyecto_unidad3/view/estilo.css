@@ -9,28 +9,56 @@ body {
 /* Diseno del panel izquierdo */
 #panel-control {
     width: 30%;
+    min-width: 260px;
     background-color: #1e1e1e;
     color: white;
     padding: 20px;
     box-sizing: border-box;
+    overflow-y: auto;
 }
 
-/* Diseno del boton de alarma */
-#btn-alarma {
-    background-color: #d32f2f;
-    color: white;
+/* Base comun de los botones */
+.boton {
+    display: block;
     width: 100%;
     padding: 15px;
+    margin-bottom: 10px;
     font-size: 16px;
     font-weight: bold;
+    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-bottom: 20px;
 }
 
+.boton:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 2px;
+}
+
+/* Despacho por grafo (Dijkstra) */
+#btn-alarma-grafo {
+    background-color: #ff9800;
+}
+#btn-alarma-grafo:hover {
+    background-color: #e68900;
+}
+
+/* Boton de alarma (OSRM) */
+#btn-alarma {
+    background-color: #d32f2f;
+}
 #btn-alarma:hover {
     background-color: #b71c1c;
+}
+
+/* Boton de reinicio */
+#btn-reiniciar {
+    background-color: #555;
+    margin-bottom: 20px;
+}
+#btn-reiniciar:hover {
+    background-color: #444;
 }
 
 /* Diseno de la consola */
@@ -41,6 +69,10 @@ body {
     height: 200px;
     font-family: monospace;
     overflow-y: auto;
+}
+
+#consola .separador {
+    margin-top: 10px;
 }
 
 /* Diseno del mapa */
