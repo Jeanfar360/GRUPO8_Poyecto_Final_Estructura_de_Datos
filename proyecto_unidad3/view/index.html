@@ -2,26 +2,26 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sistema de Despacho de Patrullas</title>
-    
-    <!-- Conectar mapa Leaflet desde internet  -->
+
+    <!-- Mapa Leaflet desde internet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    
-    <!-- Conectar archivo de diseno local -->
+
+    <!-- Estilos locales -->
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
 
     <!-- Panel izquierdo: Controles -->
-<div id="panel-control">
+    <div id="panel-control">
         <h2>🚨 Panel ECU-911 Loja</h2>
-        
-        <!-- EL NUEVO BOTON PARA TU DEMOSTRACION -->
-        <button id="btn-alarma-manual" style="background-color: #ff9800; color: white; width: 100%; padding: 15px; font-weight: bold; cursor: pointer; border: none; border-radius: 5px; margin-bottom: 10px;">MANUAL (LINEA RECTA)</button>
-        
-        <button id="btn-alarma">ACTIVAR ALARMA BANCARIA (OSRM)</button>
-        <button id="btn-reiniciar" style="background-color: #555; color: white; margin-top: 10px; width: 100%; padding: 10px; font-weight: bold; cursor: pointer; border: none; border-radius: 5px;">RESTABLECER PATRULLAS</button>
+
+        <button id="btn-alarma-grafo" class="boton">DESPACHO POR GRAFO (DIJKSTRA)</button>
+        <button id="btn-alarma" class="boton">ACTIVAR ALARMA BANCARIA (OSRM)</button>
+        <button id="btn-reiniciar" class="boton">RESTABLECER PATRULLAS</button>
+
         <div id="consola">Esperando emergencias...</div>
     </div>
 
