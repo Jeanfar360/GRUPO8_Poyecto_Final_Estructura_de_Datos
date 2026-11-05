@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de Despacho de Patrullas</title>
+    
+    <!-- Conectar mapa Leaflet desde internet  -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <!-- Conectar archivo de diseno local -->
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+    <!-- Panel izquierdo: Controles -->
+<div id="panel-control">
+        <h2>🚨 Panel ECU-911 Loja</h2>
+        
+        <!-- EL NUEVO BOTON PARA TU DEMOSTRACION -->
+        <button id="btn-alarma-manual" style="background-color: #ff9800; color: white; width: 100%; padding: 15px; font-weight: bold; cursor: pointer; border: none; border-radius: 5px; margin-bottom: 10px;">MANUAL (LINEA RECTA)</button>
+        
+        <button id="btn-alarma">ACTIVAR ALARMA BANCARIA (OSRM)</button>
+        <button id="btn-reiniciar" style="background-color: #555; color: white; margin-top: 10px; width: 100%; padding: 10px; font-weight: bold; cursor: pointer; border: none; border-radius: 5px;">RESTABLECER PATRULLAS</button>
+        <div id="consola">Esperando emergencias...</div>
+    </div>
+
+    <!-- Panel derecho: El mapa -->
+    <div id="mapa"></div>
+
+    <!-- Archivos de logica JavaScript (en orden de dependencia) -->
+    <script src="../logic/mapa.js"></script>
+    <script src="../logic/sectores.js"></script>
+    <script src="../logic/grafo.js"></script>
+    <script src="../logic/patrullas.js"></script>
+    <script src="../logic/navegacion.js"></script>
+    <script src="../logic/controlers.js"></script>
+</body>
+</html>
