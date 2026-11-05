@@ -53,7 +53,7 @@ class Grafo {
     }
 
     // Nodo mas cercano (en linea recta) a una coordenada cualquiera
-    nodoMasCercano(lat, lng) {
+        nodoMasCercano(lat, lng) {
         let mejorId = null;
         let mejorDistancia = Infinity;
         for (const [id, nodo] of this.nodos) {
@@ -64,6 +64,13 @@ class Grafo {
             }
         }
         return { id: mejorId, distancia: mejorDistancia };
+    }
+
+    // Numero de calles (cada arista no dirigida cuenta una sola vez)
+    cantidadAristas() {
+        let suma = 0;
+        for (const nodo of this.nodos.values()) suma += nodo.vecinos.size;
+        return suma / 2;
     }
 }
 
@@ -83,7 +90,13 @@ class ColaPrioridad {
     estaVacia() {
         return this.heap.length === 0;
     }
+       ver() {
+           return this.heap.length > 0 ? this.heap[0] : undefined;
+       }
 
+       vaciar() {
+           this.heap.length = 0;
+       }
     encolar(elemento, prioridad) {
         const heap = this.heap;
         heap.push({ elemento, prioridad });
